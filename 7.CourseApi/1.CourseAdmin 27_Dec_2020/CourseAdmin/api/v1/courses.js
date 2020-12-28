@@ -20,8 +20,19 @@ module.exports = function(router){
            fields =  createFields(req.query.fields)
         }
 
+            // paginations
+            var pagination = {limit:0, offset:0}
+            if(req.query && req.query.limit !== undefined){
+                // checks should be made that limit is a number
+                pagination.limit = req.query.limit
+            }
+            if(req.query && req.query.offset !== undefined){
+                // checks should be made that limit is a number
+                pagination.offset = req.query.offset
+            }
+
         //2. Setup options
-        var options = {fields:fields}
+        var options = {fields:fields, pagination:pagination}
         console.log(options)
 
         //3. execute the query
