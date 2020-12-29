@@ -20,13 +20,21 @@ exports.saveMany = function (rows, callback) {
 
 }
 
-// // UPDATE 
-// exports.update = function (criteria, doc, callback) {
-//     model.Courses.updateMany(criteria, doc, function (err, data) {
-//         callback(err, data)
+// UPDATE 
+exports.update = function (criteria, doc, callback) {
+    model.Courses.updateMany(criteria, doc, function (err, data) {
+        callback(err, data)
 
-//     })
-// }
+    })
+}
+
+// Remove
+exports.delete = function (criteria, callback) {
+    model.Courses.deleteOne(criteria, function(err,data){
+        callback(err,data)
+    })
+}
+
 
 // // RETRIEVE 
 // exports.select = function (criteria, callback) {

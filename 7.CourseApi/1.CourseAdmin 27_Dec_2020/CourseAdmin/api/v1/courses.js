@@ -59,7 +59,7 @@ module.exports = function(router){
     // CREATE new Course packages
     router.route(URI).post(function (req, res, next) {
         console.log("POST  Courses")
-
+        res.header('Cache-Control', 'public, max-age='+MAX_AGE);
         //1. Get the data
         var doc = req.body;
 
@@ -76,7 +76,40 @@ module.exports = function(router){
         });
     });
 
+    router.route(URI).put(function(req,res,next){
+        console.log("update data")
+        res.header('Cache-Control', 'public, max-age='+MAX_AGE);
+        var criteria = {_id:'5fe9e28e2a7e4b2ca4aee0d4'}
+        var doc = req.body;
+        db.update(criteria,doc,function(err,updated){
+            if(err){
+                console.log(err)
+                res.status(500)
+                res.send("Error connecting to db")
+            } else {
+                console.log("updated courses = %d",updated.length)
+                res.send(updated)
+            }
+        });
+    });
+
+    router.route(URI).delete(function(req,res,next){
+        console.log("Remove data")
+        res.header('Cache-Control', 'public, max-age='+MAX_AGE);
+        var criteria = {title:"HTML/CSS"}
+        db.delete(criteria,function(err,deleted){
+            if(err){
+                console.log(err)
+                res.status(500)
+                res.send("Error connecting to db")
+            } else {
+                console.log("Deleted courses = %d",deleted.length)
+                res.send(deleted)
+            }
+        });
+    });
 }
+
 
 var processMongooseErrors = function (message, method, endpoint, err,payload) {
     var errorList = []
