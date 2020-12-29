@@ -7,6 +7,7 @@ var URI = '/' + VERSION + '/' + RESOURCE_NAME;
 var db = require('../../db/courses')
 var apiErrors = require('../../util/errors')
 var apiMessages = require('../../util/messages')
+var MAX_AGE = 15;
 
 module.exports = function(router){
     'use strict';
@@ -14,6 +15,8 @@ module.exports = function(router){
     router.route(URI).get(function(req, res,next){
         console.log("GET Courses")
         
+        res.header('Cache-Control', 'public, max-age='+MAX_AGE);
+
         //1. fields
         var fields ={}
         if(req.query && req.query.fields !== undefined){
@@ -21,7 +24,7 @@ module.exports = function(router){
         }
 
             // paginations
-            var pagination = {limit:5, offset:0}
+            var pagination = {limit:0, offset:0}
             if(req.query && req.query.limit !== undefined){
                 // checks should be made that limit is a number
                 pagination.limit = req.query.limit

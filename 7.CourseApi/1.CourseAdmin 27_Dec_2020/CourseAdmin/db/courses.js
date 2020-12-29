@@ -46,7 +46,7 @@ exports.select = function (criteria,options, callback) {
 exports.select = function (criteria,options, callback) {
 
     // Local variable for capturing limit & offset
-    var lim = 5
+    var lim = 0
     var off = 0
     if(options.pagination !== undefined){
         if(options.pagination.limit !== undefined)  lim = parseInt(options.pagination.limit)
