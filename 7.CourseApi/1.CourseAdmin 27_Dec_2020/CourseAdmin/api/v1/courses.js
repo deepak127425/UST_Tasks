@@ -21,7 +21,7 @@ module.exports = function(router){
         }
 
             // paginations
-            var pagination = {limit:0, offset:0}
+            var pagination = {limit:5, offset:0}
             if(req.query && req.query.limit !== undefined){
                 // checks should be made that limit is a number
                 pagination.limit = req.query.limit

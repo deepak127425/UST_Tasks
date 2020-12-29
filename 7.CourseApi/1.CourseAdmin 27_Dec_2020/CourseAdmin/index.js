@@ -4,8 +4,6 @@ process.env.DB_URI = require("./db/clouddb").DB_URI
 var express = require('express')
 var bodyParser = require('body-parser')
 
-
-
 var router = express.Router();
 
 // setup the vacations api
@@ -21,6 +19,7 @@ app.use(bodyParser.json());//{type: '*/*'}));
 
 // Setup the app to use the router
 app.use(router);
+
 
 
 // Start the listener
