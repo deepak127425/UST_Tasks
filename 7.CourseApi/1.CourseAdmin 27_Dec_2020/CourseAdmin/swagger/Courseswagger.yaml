@@ -1,0 +1,100 @@
+swagger: '2.0'
+info:
+  description: Select course and gain more knowledge. "Actions speak louder than words".
+  title: Course Selection
+  version: v1
+host: api.courseadmin.org
+schemes:
+  - https
+basePath: /
+paths:
+  /v1/courses:
+    get:
+      summary: Get Course admin details
+      parameters:
+        - in: query
+          name: format
+          type: string
+          description: 'The format to return the response in, i.e. json.'
+          default: json
+      responses:
+        '200':
+          description: Success response
+    post:
+      summary: Post course admin details
+      parameters:
+        - in: query
+          name: format
+          type: string
+          description: 'The format to send the request in, i.e. json.'
+          default: json
+      responses:
+        '200':
+          description: Success response
+
+    put:
+      summary: Update course admin deta useing id
+      parameters:
+        - in: query
+          name: format
+          type: string
+          description: 'The format to send the request in, i.e. json.'
+          default: json
+      responses:
+        '200':
+          description: Success response
+    delete:
+      summary: Delete course admin data using id
+      parameters:
+        - in: query
+          name: format
+          type: string
+          description: 'The format to return the response in, i.e. json.'
+          default: json
+      responses:
+        '200':
+          description: Success response
+definitions:
+  ErrorHandling:
+    required:
+      - message
+    properties:
+      message:
+         type: string
+         
+  Pagenation:
+    required:
+      - message
+      - hint
+    properties:
+      message:
+        type: string
+      hint:
+        type: string
+        
+  Partial Response:
+    required:
+      - name
+      - description
+      - type
+      - numberOfDays
+    properties:
+      name:
+        type: string
+      description:
+        type: string
+      type:
+        type: string
+        enum: 
+          - database
+          - api training
+      
+  Caching:
+    required:
+      - type
+      - role
+    properties:
+      type:
+        type: string
+      role:
+        type: string
