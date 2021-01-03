@@ -1,0 +1,37 @@
+
+Working web link: 
+-----------------
+https://usttodofunctionapp4.z7.web.core.windows.net/
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+
+
+
+listtodo:
+---------
+https://ust-api-management.azure-api.net/ust-func-app-todo/todos
+
+gettodo:
+--------
+https://ust-api-management.azure-api.net/ust-func-app-todo/todos/{id}
+
+deletetodo:
+-----------
+https://ust-api-management.azure-api.net/ust-func-app-todo/todos/{id}
+
+craetetodo:
+-----------
+https://ust-api-management.azure-api.net/ust-func-app-todo/todos
+
+updatetodo:
+-----------
+https://ust-api-management.azure-api.net/ust-func-app-todo/todos/{id}
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+
+
+Azure AD B2C --> B2C_1_todo-signin:
+----------------------------------
+https://usttodotestingapi.b2clogin.com/usttodotestingapi.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_todo-signin&client_id=d97ae2fb-9182-489b-8344-1894121ba6ca&nonce=defaultNonce&redirect_uri=http%3A%2F%2Flocalhost%3A4200%2F&scope=openid&response_type=id_token&prompt=login
+---------------------------------------------------------------------
+---------------------------------------------------------------------
