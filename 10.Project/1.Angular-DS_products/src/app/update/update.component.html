@@ -1,0 +1,68 @@
+<app-category></app-category>
+
+    <div *ngIf="isUpdate" >
+            <div class="col-md-6">
+                    <h2 class="text-center">Add product</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="pid">PRODUCT_ID</label>
+                            <input type="text" [(ngModel)]="user.productid" placeholder="pdtid" class="form-control" name="pid" >
+                
+                        </div>
+                        <div class="form-group">
+                            <label for="pname">PRODUCT_NAME</label>
+                            <input type="text" [(ngModel)]="user.productname" placeholder="pdtname" class="form-control" name="pname" >
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="category">CATEGORY</label>
+                            <input type="text" [(ngModel)]="user.productcategory" placeholder="category" class="form-control" name="category" >
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="price">PRICE</label>
+                            <input type="text" [(ngModel)]="user.productprice" placeholder="price" class="form-control" name="price" >
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="available">AVAILABLE</label>
+                            <input type="text" [(ngModel)]="user.available" placeholder="true" class="form-control" name="available" >
+                            
+                        </div>
+                        <div class="form-group">
+                                <label for="rating">RATING</label>
+                                <input type="text" [(ngModel)]="user.rating" placeholder="rating" class="form-control" name="rating" >
+                                
+                            </div>
+                        <button class="btn btn-success" (click)="updateSelectedProduct(user)">Update</button>
+                    </form>
+                </div>
+    </div>
+    <table class="table">
+            
+                <thead>
+                  <tr>
+               
+                    <th scope="col">ID</th>
+                    <th scope="col">NAME</th>
+                    <th scope="col">CATEGORY</th>
+                    <th scope="col">PRICE</th>
+                    <th scope="col">AVAILABLE</th>
+                    <th scope="col">RATING</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let i of products">
+                 
+                    <td>{{i.productid}}</td>
+                    <td>{{i.productname}}</td>
+                    <td>{{i.productcategory}}</td>
+                    <td>{{i.productprice}}</td>
+                    <td>{{i.available}}</td>
+                    <td>{{i.rating}}</td>
+                 
+            <td><button class="btn btn-info" (click) ="updateProduct(i)">Edit</button></td>
+            </tr>
+            </tbody>
+            
+            </table>

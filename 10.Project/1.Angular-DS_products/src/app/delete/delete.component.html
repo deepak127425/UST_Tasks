@@ -1,0 +1,27 @@
+<app-category></app-category>
+<table class="table">
+    <thead>
+      <tr>
+   
+        <th scope="col">ID</th>
+        <th scope="col">NAME</th>
+        <th scope="col">CATEGORY</th>
+        <th scope="col">PRICE</th>
+        <th scope="col">AVAILABLE</th>
+        <th scope="col">RATING</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of products">
+     
+        <td>{{i.productid}}</td>
+        <td>{{i.productname}}</td>
+        <td>{{i.productcategory}}</td>
+        <td>{{i.productprice}}</td>
+        <td>{{i.available}}</td>
+        <td>{{i.rating}}</td>
+     
+<td><button class="btn btn-danger" (click) ="deleteProduct(i)">delete</button></td>
+</tr>
+</tbody>
+</table>

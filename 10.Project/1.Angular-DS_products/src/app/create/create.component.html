@@ -1,0 +1,37 @@
+<app-category></app-category>
+<div class="col-md-6">
+        <h2 class="text-center">Add product</h2>
+        <form>
+            <div class="form-group">
+                <label for="pid">PRODUCT_ID</label>
+                <input type="text" [(ngModel)]="user.productid" placeholder="pdtid" class="form-control" name="pid" required>
+    
+            </div>
+            <div class="form-group">
+                <label for="pname">PRODUCT_NAME</label>
+                <input type="text" [(ngModel)]="user.productname" placeholder="pdtname" class="form-control" name="pname" required>
+                
+            </div>
+            <div class="form-group">
+                <label for="category">CATEGORY</label>
+                <input type="text" [(ngModel)]="user.productcategory" placeholder="category" class="form-control" name="category" required>
+                
+            </div>
+            <div class="form-group">
+                <label for="price">PRICE</label>
+                <input type="text" [(ngModel)]="user.productprice" placeholder="price" class="form-control" name="price" required>
+                
+            </div>
+            <div class="form-group">
+                <label for="available">AVAILABLE</label>
+                <input type="text" [(ngModel)]="user.available" placeholder="true" class="form-control" name="available" required>
+                
+            </div>
+            <div class="form-group">
+                    <label for="rating">RATING</label>
+                    <input type="text" [(ngModel)]="user.rating" placeholder="rating" class="form-control" name="rating" required>
+                    
+                </div>
+            <button class="btn btn-success" (click)="createProduct()">create </button>
+        </form>
+    </div>
